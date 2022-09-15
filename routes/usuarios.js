@@ -4,7 +4,7 @@ const router = express.Router();
 const mysql = require('../mysql').pool;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-//minha pika
+
 router.post('/cadastro', (req, res, next) => {
     mysql.getConnection((err, conn) => {
         if (err) { return res.status(500).send({ error: error }) };
