@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 const rotaProdutos = require('./routes/produtos');
 const rotaPedidos = require('./routes/pedidos');
+const rotaUsuarios = require('./routes/usuarios');
+
 
 app.use(morgan('dev'));
 app.use('/uploads', express.static('uploads'));
@@ -12,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/produtos', rotaProdutos);
 app.use('/pedidos', rotaPedidos);
+app.use('/usuarios', rotaUsuarios);
 
 app.use((req, res, next) => {
     res.header('Acces-Control-Alow-Origin', '*');
