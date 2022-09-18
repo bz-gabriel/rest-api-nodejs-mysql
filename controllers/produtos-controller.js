@@ -19,7 +19,7 @@ exports.GetProdutos = (req, res, next) => {
                             request: {
                                 tipo: 'GET',
                                 descricao: 'Retorna os detalhes de um produto especifico',
-                                url: 'http://localhost/3000/produtos/' + prod.id_produto
+                                url: process.env.URL_API + 'produtos/' + prod.id_produto
                             }
                         }
                     })
@@ -53,7 +53,7 @@ exports.PostProduto = (req, res, next) => {
                         request: {
                             tipo: 'GET',
                             descricao: 'Retorna todos os produtos',
-                            url: 'http://localhost/3000/produtos'
+                            url: process.env.URL_API + 'produtos'
                         }
                     }
                 };
@@ -89,7 +89,7 @@ exports.PatchProduto = (req, res, next) => {
                         request: {
                             tipo: 'GET',
                             descricao: 'Retorna os detalhes de um produto específico',
-                            url: 'http://localhost/3000/produtos/' + req.body.id_produto
+                            url: process.env.URL_API + 'produtos/' + req.body.id_produto
                         }
                     }
                 }
@@ -123,7 +123,7 @@ exports.GetUmProduto = (req, res, next) => {
                         request: {
                             tipo: 'GET',
                             descricao: 'Retorna todos os produtos',
-                            url: 'http://localhost/3000/produtos'
+                            url: process.env.URL_API + 'produtos'
                         }
                     }
                 };
@@ -148,7 +148,7 @@ exports.DeleteProduto = (req, res, next) => {
                     request: {
                         tipo: 'POST',
                         descricao: 'Insere um produto',
-                        url: 'http://localhost/3000/produtos',
+                        url: process.env.URL_API + 'produtos',
                         body: {
                             "nome": "String",
                             "preco": "number"

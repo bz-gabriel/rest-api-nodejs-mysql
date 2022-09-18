@@ -84,7 +84,7 @@ exports.GetUsuarios = (req, res, next) => {
                             request: {
                                 tipo: 'POST',
                                 descricao: 'Adiciona um novo usario',
-                                url: 'http://localhost:3000/usuarios/cadastro'
+                                url: process.env.URL_API + 'usuarios/cadastro'
                             }
                         }
                     })
